@@ -10,58 +10,69 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* フォトショっぽいダークモード */
+            background-color: #1a1a1a;
             color: #eeeeee;
         }
 
-        /* --- 上部バナーエリア --- */
+        /* --- 上部バナーエリア（固定！） --- */
         .banner {
+            position: fixed; /* 固定 */
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('top1.webp') center/cover no-repeat; /* ケンくんの画像を背景に！ */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 3px solid #00a8ff; /* フォトショのアクセントカラー */
+            height: 180px; /* バナーの高さを少し調整 */
+            background: url('top1.webp') center/cover no-repeat;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        .banner h1 {
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            letter-spacing: 2px;
-        }
-
-        /* --- コンテンツエリア --- */
+/* --- コンテンツエリア --- */
         .container {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 200px 20px 40px; /* バナー固定用の余白 */
         }
 
-        /* --- ショートカット表 --- */
+        /* --- タイトルエリアの隙間をゼロに！ --- */
+        .title-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 5px; /* ここを15pxから5pxに！さらに詰めたいなら0でもOK */
+            border-left: 5px solid #008eb6;
+            padding: 5px 0 5px 15px;
+        }
+
+        .title-area h2 {
+            margin: 0; /* ブラウザが勝手に入れる余白を完全に削除！ */
+            font-size: 1.5rem;
+            line-height: 1.2; /* 行間を少し詰めるとより締まります */
+        }
+
+        /* --- ショートカット表の微調整 --- */
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: #2b2b2b;
             border-radius: 8px;
             overflow: hidden;
+            margin-top: 0; /* 表の上の隙間も念のためゼロに */
         }
 
         th, td {
-            padding: 15px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #3d3d3d;
         }
 
         th {
-            background-color: #00a8ff;
+            background-color: #008eb6;
             color: white;
             font-size: 1.1rem;
         }
 
         tr:hover {
-            background-color: #353535; /* マウスを乗せると少し明るく */
+            background-color: #353535;
         }
 
         .key {
@@ -70,33 +81,88 @@
             border-radius: 4px;
             border: 1px solid #666;
             font-family: monospace;
-            color: #00a8ff;
+            color: #ffffff;
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
-    <div class="banner">
-        <h1>Photoshop Shortcuts</h1>
-    </div>
+    <div class="banner"></div>
 
     <div class="container">
-        <h2>🚀 クイックリファレンス</h2>
+        <div class="title-area">
+            <div class="icon"></div>
+            <h2>48-k Exclusive Shortcuts</h2>
+        </div>
+
         <table>
             <thead>
                 <tr>
-                    <th>アクション</th>
-                    <th>ショートカットキー</th>
+                    <th>Action</th>
+                    <th>Shortcut keys</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>新規レイヤー作成</td>
-                    <td><span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">N</span></td>
+                    <td><span class="key">F4</span>　 or 　<span class="key">F5</span>　 or 　<span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">N</span></td>
                 </tr>
                 <tr>
-                    <td>選択範囲の解除</td>
-                    <td><span class="key">Ctrl</span> + <span class="key">D</span></td>
+                    <td>レイヤーを結合</td>
+                    <td><span class="key">F8</span>　 or 　<span class="key">F9</span></td>
+                </tr>
+                <tr>
+                    <td>パスから選択範囲作成</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">F11</span></td>
+                </tr>
+                <tr>
+                    <td>パスから選択範囲作成＆塗りつぶし</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">F12</span></td>
+                </tr>
+                <tr>
+                    <td>ブラシ選択</td>
+                    <td><span class="key">B</span></td>
+                </tr>
+                <tr>
+                    <td>消しゴム選択</td>
+                    <td><span class="key">D</span></td>
+                </tr>
+                <tr>
+                    <td>ペンツール選択</td>
+                    <td><span class="key">P</span></td>
+                </tr>
+                 <tr>
+                    <td>スポイトツール選択</td>
+                    <td><span class="key">S</span></td>
+                </tr>
+                 <tr>
+                    <td>ぼかしツール選択</td>
+                    <td><span class="key">E</span></td>
+                </tr>
+                 <tr>
+                    <td>指先ツール選択</td>
+                    <td><span class="key">K</span></td>
+                </tr>
+                <tr>
+                    <td>指先ツール選択</td>
+                    <td><span class="key">K</span></td>
+                </tr>
+                <tr>
+                    <td>グラデーションツール選択</td>
+                    <td><span class="key">G</span></td>
+                </tr>
+                <tr>
+                    <td>回転ビューツール選択</td>
+                    <td><span class="key">R</span></td>
+                </tr>
+                <tr>
+                    <td>手のひらツール選択</td>
+                    <td><span class="key">H</span></td>
+                </tr>
+                <tr>
+                    <td>シェイプツール選択</td>
+                    <td><span class="key">U</span></td>
                 </tr>
                 <tr>
                     <td>自由変形</td>
@@ -106,9 +172,31 @@
                     <td>ブラシサイズ変更</td>
                     <td><span class="key">[</span> または <span class="key">]</span></td>
                 </tr>
+                <tr>
+                    <td>取り消し</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">Z</span></td>
+                </tr>
+                <tr>
+                    <td>やり直し（前に戻る）</td>
+                    <td><span class="key">Shift</span> + <span class="key">Ctrl</span> +  <span class="key">Z</span></td>
+                </tr>
+                <tr>
+                　 <td>カット</td>
+                   <td><span class="key">Ctrl</span> + <span class="key">X</span></td>
+                </tr>
+                <tr>
+                　 <td>コピー</td>
+                   <td><span class="key">Ctrl</span> + <span class="key">C</span></td>
+                <tr>
+                　　<td>ペースト</td>
+                   <td><span class="key">Ctrl</span> + <span class="key">V</span></td>
+                </tr>
             </tbody>
         </table>
     </div>
+    <br>
+<br>
+<br>
 
 </body>
 </html>
