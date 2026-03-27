@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photoshop Shortcut Master</title>
+    <title>Photoshop Manual Series</title>
     <style>
-        /* --- 全体のデザイン --- */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
@@ -14,39 +13,72 @@
             color: #eeeeee;
         }
 
-        /* --- 上部バナーエリア（固定！） --- */
-        .banner {
-            position: fixed; /* 固定 */
+        /* --- ヘッダーエリア（バナー＋ナビをセットで固定） --- */
+        .fixed-header {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 180px; /* バナーの高さを少し調整 */
-            background: url('top1.webp') center/cover no-repeat;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-/* --- コンテンツエリア --- */
+        /* バナー本体 */
+        .banner {
+            width: 100%;
+            height: 180px;
+            background: url('top1.webp') center/cover no-repeat;
+            display: block;
+        }
+
+        /* 相互リンクバー（ナビゲーション） */
+        .nav-bar {
+            background-color: #000000; /* 真っ黒で引き締める */
+            display: flex;
+            justify-content: flex-end; /* 右寄せ（イメージ図通り） */
+            padding: 10px 20px;
+            border-bottom: 2px solid #008eb6; /* フォトショカラーのアクセント */
+        }
+
+        .nav-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 5px 15px;
+            border-right: 1px solid #444; /* 区切り線 */
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .nav-bar a:last-child {
+            border-right: none;
+        }
+
+        .nav-bar a:hover {
+            background-color: #333;
+            color: #00a8ff;
+        }
+
+        /* --- コンテンツエリア（余白を多めに！） --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 200px 20px 40px; /* バナー固定用の余白 */
+            /* バナー(180px) + ナビ(約45px) + 余裕分で250px確保 */
+            padding: 250px 20px 40px;
         }
 
-        /* --- タイトルエリアの隙間をゼロに！ --- */
         .title-area {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 5px; /* ここを15pxから5pxに！さらに詰めたいなら0でもOK */
+            margin-bottom: 5px;
             border-left: 5px solid #008eb6;
             padding: 5px 0 5px 15px;
         }
 
         .title-area h2 {
-            margin: 0; /* ブラウザが勝手に入れる余白を完全に削除！ */
+            margin: 0;
             font-size: 1.5rem;
-            line-height: 1.2; /* 行間を少し詰めるとより締まります */
+            line-height: 1.2;
         }
 
         /* --- ショートカット表の微調整 --- */
@@ -88,12 +120,18 @@
 </head>
 <body>
 
-    <div class="banner"></div>
+    <div class="fixed-header">
+        <div class="banner"></div>
+        <nav class="nav-bar">
+            <a href="https://kennew0922-lgtm.github.io/photoshopshortcuts-48-/">ショートカット</a>
+            <a href="https://kennew0922-lgtm.github.io/Listt_of_Photoshop_Shapes/">シェイプ</a>
+            <a href="https://kennew0922-lgtm.github.io/favorite_fonts/">フォント</a>
+        </nav>
+    </div>
 
     <div class="container">
         <div class="title-area">
-            <div class="icon"></div>
-            <h2>48-k Exclusive Shortcuts</h2>
+            <h2>List of Main Photoshop Shortcuts</h2>
         </div>
 
         <table>
