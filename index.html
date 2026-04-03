@@ -13,119 +13,110 @@
             color: #eeeeee;
         }
 
-        /* --- ヘッダーエリア（バナー＋ナビをセットで固定） --- */
+        /* --- 🌸 ヘッダー全体を固定（ここが大事！） --- */
         .fixed-header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 9999; /* 重なり順を一番上に */
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
-        /* バナー本体 */
-        .banner {
-            width: 100%;
-            height: 180px;
-            background: url('top1.webp') center/cover no-repeat;
-            display: block;
+        /* タイトルバナー（高さ65px） */
+        .title-banner {
+            background-color: #000000;
+            height: 65px; 
+            box-sizing: border-box;
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
         }
 
-        /* 相互リンクバー（ナビゲーション） */
+        .title-banner h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #00a8ff;
+            border-left: 5px solid #008eb6;
+            padding-left: 15px;
+            line-height: 1.2;
+        }
+
+        /* ナビゲーションバー（高さ35px） */
         .nav-bar {
-            background-color: #000000; /* 真っ黒で引き締める */
+            background-color: #000000;
+            height: 35px;
+            box-sizing: border-box;
             display: flex;
-            justify-content: flex-end; /* 右寄せ（イメージ図通り） */
-            padding: 10px 20px;
-            border-bottom: 2px solid #008eb6; /* フォトショカラーのアクセント */
+            justify-content: flex-end;
+            padding: 0 10px;
+            align-items: center;
+            border-bottom: 2px solid #008eb6;
         }
 
         .nav-bar a {
             color: #ffffff;
             text-decoration: none;
             font-size: 0.9rem;
-            padding: 5px 15px;
-            border-right: 1px solid #444; /* 区切り線 */
-            transition: color 0.3s, background-color 0.3s;
+            padding: 0 15px;
+            line-height: 35px;
+            border-right: 1px solid #444;
+            transition: color 0.3s;
         }
 
-        .nav-bar a:last-child {
-            border-right: none;
-        }
-
-        .nav-bar a:hover {
-            background-color: #333;
-            color: #00a8ff;
-        }
-
-        /* --- コンテンツエリア（余白を多めに！） --- */
+        /* --- コンテンツエリア --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            /* バナー(180px) + ナビ(約45px) + 余裕分で250px確保 */
-            padding: 250px 20px 40px;
+            /* 🌸 ヘッダーの合計(100px)＋余白分を確保 */
+            padding-top: 120px; 
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
         }
 
-        .title-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 5px;
-            border-left: 5px solid #008eb6;
-            padding: 5px 0 5px 15px;
-        }
-
-        .title-area h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            line-height: 1.2;
-        }
-
-        /* --- ショートカット表の微調整 --- */
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: #2b2b2b;
             border-radius: 8px;
             overflow: hidden;
-            margin-top: 0; /* 表の上の隙間も念のためゼロに */
         }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #3d3d3d;
-        }
-
+        /* --- 🌸 運命の「Shape Name」バーの固定設定 --- */
         th {
             background-color: #008eb6;
             color: white;
-            font-size: 1.1rem;
+            position: sticky;
+            /* 🌸 ヘッダー合計 100px の位置に吸着！ */
+            top: 0px; 
+            z-index: 100;
+            padding: 12px;
+            text-align: left;
         }
 
-        tr:hover {
-            background-color: #353535;
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #3d3d3d;
         }
 
-        .key {
-            background: #444;
-            padding: 2px 8px;
+        .preview-img {
+            max-width: 300px;
+            height: auto;
             border-radius: 4px;
-            border: 1px solid #666;
-            font-family: monospace;
-            color: #ffffff;
-            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
     <div class="fixed-header">
-        <div class="banner"></div>
+        <div class="title-banner">
+            <h1>Photoshop Manual Series</h1>
+        </div>
         <nav class="nav-bar">
-            <a href="https://kennew0922-lgtm.github.io/photoshopshortcuts-48-/">ショートカット</a>
-            <a href="https://kennew0922-lgtm.github.io/Listt_of_Photoshop_Shapes/">シェイプ</a>
-            <a href="https://kennew0922-lgtm.github.io/favorite_fonts/">フォント</a>
+            <a href="index.html">ショートカット</a>
+            <a href="shapes.html">シェイプ</a>
+            <a href="#">フォント</a>
         </nav>
     </div>
 
