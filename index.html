@@ -69,7 +69,7 @@
         max-width: 900px;
         margin: 0 auto;
         /* 🌸 ヘッダー(100px)より少し余裕を持たせた余白 */
-        padding-top: 130px; 
+        padding-top: 100px; 
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 40px;
@@ -95,22 +95,19 @@
         text-align: left;
     }
 
-        /* --- 🌸 運命の「Shape Name」バーの固定設定 --- */
-        th {
-            background-color: #008eb6;
-            color: white;
-            position: sticky;
-            /* 🌸 ヘッダー合計 100px の位置に吸着！ */
-            top: 0px; 
-            z-index: 100;
-            padding: 12px;
-            text-align: left;
-        }
+/* --- 🌸 青いバーの設定（ここだけにまとめます！） --- */
+th {
+    background-color: #008eb6;
+    color: white;
+    position: sticky;
+    /* 🌸 固定ヘッダーの高さ(100px)に合わせます */
+    top: 100px; 
+    z-index: 100;
+    padding: 12px; /* パディングはお好みで！ */
+    text-align: left;
+}
 
-        td {
-            padding: 16px;
-            border-bottom: 1px solid #3d3d3d;
-        }
+/* 🌸 この下にある、もう一つの「th」の設定（top: 0pxの方）は丸ごと削除してください！ */
 
         .preview-img {
             max-width: 300px;
