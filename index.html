@@ -64,24 +64,36 @@
             transition: color 0.3s;
         }
 
-        /* --- コンテンツエリア --- */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            /* 🌸 ヘッダーの合計(100px)＋余白分を確保 */
-            padding-top: 580px; 
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 40px;
-        }
+/* --- コンテンツエリア --- */
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        /* 🌸 ヘッダー(100px)より少し余裕を持たせた余白 */
+        padding-top: 130px; 
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #2b2b2b;
-            border-radius: 8px;
-            overflow: hidden;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #2b2b2b;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* --- 🌸 青いバーの設定 --- */
+    th {
+        background-color: #008eb6;
+        color: white;
+        position: sticky;
+        /* 🌸 ここを 100px にすることでヘッダーの真下に止まります！ */
+        top: 100px; 
+        z-index: 100;
+        padding: 12px;
+        text-align: left;
+    }
 
         /* --- 🌸 運命の「Shape Name」バーの固定設定 --- */
         th {
@@ -120,15 +132,16 @@
         </nav>
     </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>Shortcut keys</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Shortcut keys</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
                     <td>新規レイヤー作成</td>
                     <td><span class="key">F4</span>　 or 　<span class="key">F5</span>　 or 　<span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">N</span></td>
                 </tr>
