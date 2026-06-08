@@ -13,9 +13,28 @@
             color: #eeeeee;
         }
 
-        /* --- 🌸 ヘッダー全体を固定（ここが大事！） --- */
+        /* ✨ 変更：バナー用のラッパー（画像がはみ出さないように中央に包む） */
+        .banner-container {
+            width: 100%;
+            background-color: #000000; /* 画像の背景を黒にして馴染ませる */
+            text-align: center;       /* 画像を中央揃えにする */
+        }
+
+        /* ✨ 変更：最上部の画像（固定せず、画面幅に合わせて伸縮するだけ） */
+        .top-banner-img {
+            display: block;
+            width: 100%;         /* 画面の横幅いっぱいに広げる */
+            max-width: 900px;    /* テーブルの最大幅と合わせて一体感を出す */
+            height: auto;        /* 縦横比を崩さずに拡大縮小 */
+            margin: 0 auto;      /* 中央揃え */
+        }
+
+        /* --- 🌸 ヘッダー（黒バー＋ナビ）だけを固定！ --- */
         .fixed-header {
             position: fixed;
+            /* 💡 魔法のポイント：top: 0 ではなく、初期状態は通常配置、スクロール時に上部に張り付くように設定！ */
+            position: -webkit-sticky; /* サファリ用 */
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
@@ -64,48 +83,57 @@
             transition: color 0.3s;
         }
 
-/* --- コンテンツエリア --- */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    /* 🌸 100pxに設定。これで黒バナーの高さピッタリからテーブルが始まります */
-    padding-top: 96px; 
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-}
+        /* --- コンテンツエリア --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            /* 🌸 変更：固定ヘッダー（黒バー＋ナビ）の合計高さ「100px」分の余白だけで固定！ */
+            padding-top: 30px; 
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #2b2b2b;
-    border-radius: 8px;
-    /* 🌸 stickyを効かせるために overflow: hidden は外すのがベターです */
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2b2b2b;
+            border-radius: 8px;
+        }
 
-/* --- 🌸 青いバー（見出し）の設定 --- */
-th {
-    background-color: #008eb6;
-    color: white;
-    position: sticky;
-    /* 🌸 ここを 100px に。これでスクロールした時に黒バナーの真下で止まります */
-    top: 96px; 
-    z-index: 100;
-    padding: 12px;
-    text-align: left;
-}
+        /* --- 🌸 青いバー（見出し）の設定 --- */
+        th {
+            background-color: #008eb6;
+            color: white;
+            position: sticky;
+            /* 🌸 変更：スクロールした時に、固定ヘッダー（合計100px）の真下ピッタリで止まるように固定 */
+            top: 100px; 
+            z-index: 100;
+            padding: 12px;
+            text-align: left;
+        }
 
-/* ❌ 注意：この下にあった、もう一つの「th { top: 0px; ... }」という記述は
-   必ず丸ごと削除するか、コメントアウトしてください！ ❌ */
         .preview-img {
             max-width: 300px;
             height: auto;
             border-radius: 4px;
         }
+
+        .key {
+            background-color: #444;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-bottom: 2px solid #222;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
 
+    <div class="banner-container">
+        <img src="https://socrarius-tool.com/photoshopshortcuts-48-/banner1.jpg" alt="socrarius" class="top-banner-img">
+    </div>
+    
     <div class="fixed-header">
         <div class="title-banner">
             <h1>Main Shortcuts</h1>
@@ -117,22 +145,22 @@ th {
         </nav>
     </div>
 
-<div class="container">
-    <table>
-        <thead>
-            <tr>
-                <th>Action</th>
-                <th>Shortcut keys</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Shortcut keys</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <td>新規レイヤー作成</td>
-                    <td><span class="key">F4</span>　 or 　<span class="key">F5</span>　 or 　<span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">N</span></td>
+                    <td><span class="key">F4</span>  or  <span class="key">F5</span>  or  <span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">N</span></td>
                 </tr>
                 <tr>
                     <td>レイヤーを結合</td>
-                    <td><span class="key">F8</span>　 or 　<span class="key">F9</span></td>
+                    <td><span class="key">F8</span>  or  <span class="key">F9</span></td>
                 </tr>
                 <tr>
                     <td>パスから選択範囲作成</td>
@@ -199,22 +227,19 @@ th {
                     <td><span class="key">Shift</span> + <span class="key">Ctrl</span> +  <span class="key">Z</span></td>
                 </tr>
                 <tr>
-                　 <td>カット</td>
-                   <td><span class="key">Ctrl</span> + <span class="key">X</span></td>
+                     <td>カット</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">X</span></td>
                 </tr>
                 <tr>
-                　 <td>コピー</td>
-                   <td><span class="key">Ctrl</span> + <span class="key">C</span></td>
+                     <td>コピー</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">C</span></td>
+                </tr>
                 <tr>
-                　　<td>ペースト</td>
-                   <td><span class="key">Ctrl</span> + <span class="key">V</span></td>
+                     <td>ペースト</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">V</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <br>
-<br>
-<br>
-
 </body>
 </html>
