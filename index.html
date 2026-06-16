@@ -114,18 +114,26 @@
             border-radius: 8px;
         }
 
-        /* --- 🌸 青いバー（見出し）の設定 --- */
+        /* --- 🌸 基本のバー（見出し）の設定（青・赤共通の形） --- */
         th {
-            background-color: #008eb6;
             color: white;
             position: sticky;
-            /* 🌸 変更：スクロールした時に、固定ヘッダー（合計100px）の真下ピッタリで止まるように固定 */
             top: 100px; 
             z-index: 100;
             padding: 12px;
             text-align: left;
+    
+            /* 🎨 初期値はいつもの綺麗な青バーにしておきます */
+            background-color: #008eb6; 
         }
 
+        /* --- 🌸 赤いバー（見出し）専用の設定 --- */
+        /* thタグに「.danger-bar」というクラスがついた時だけ、背景を赤に上書きします！ */
+        th.danger-bar {
+            background-color: #a92629;
+        }
+
+        /* --- 🖼️ 画像やキーの設定（共通で使えるので2は消してまとめてOK！） --- */
         .preview-img {
             max-width: 300px;
             height: auto;
@@ -152,6 +160,9 @@
             letter-spacing: 2px;
             box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
         }
+
+
+
     </style>
 </head>
 <body>
@@ -195,6 +206,10 @@
                 <tr>
                     <td>パスから選択範囲作成＆塗りつぶし（オリジナル）</td>
                     <td><span class="key">Ctrl</span> + <span class="key">F12</span></td>
+                </tr>
+                <tr>
+                    <td>メモリクリア（オリジナル）</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">F5</span></td>
                 </tr>
                 <tr>
                     <td>ブラシ選択</td>
@@ -281,11 +296,11 @@
     <div class="container">
         <table>
             <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>Special Shortcut keys</th>
-                </tr>
-            </thead>
+            <tr>
+           <th class="danger-bar">Action</th>
+           <th class="danger-bar">Special Shortcut keys</th>
+          </tr>
+          </thead>
             <tbody>             
                 <tr>
                      <td>レイヤー結合+保存+閉じる<br>XXX動画作成用の魔法</td>
